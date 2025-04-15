@@ -40,7 +40,7 @@ while Run <=Max_Run
 
 
     X=randi([0,1],1,size(Input,2));
-    Fit_X=Fit(Input(1:end-1,:),Target,X);
+    Fit_X=Fit_2(Input(1:end-1,:),Target,X);
 
     X11=randi([0,1],1,size(Input,2));
     Fit_X11=0;
@@ -52,7 +52,7 @@ while Run <=Max_Run
         X1=zeros(1,Nvar);
         rf=ranks(1,1:i);
         X1(1,rf)=1;
-        Fit_X1=Fit(Input(1:end-1,:),Target,X1);
+        Fit_X1=Fit_2(Input(1:end-1,:),Target,X1);
         if Fit_X1>Fit_X11
             X11=X1;
             Fit_X11=Fit_X1;
@@ -61,7 +61,7 @@ while Run <=Max_Run
         X2=zeros(1,Nvar);
         rf2=idx(1,1:i);
         X2(1,rf2)=1;
-        Fit_X2=Fit(Input(1:end-1,:),Target,X2);
+        Fit_X2=Fit_2(Input(1:end-1,:),Target,X2);
         EFs=EFs+1;
         if Fit_X2>Fit_X22
             X22=X2;
@@ -142,7 +142,7 @@ while Run <=Max_Run
             X_New(j)=1;
         end
 
-        Fit_X_New=Fit(Input(1:end-1,:),Target,X_New);
+        Fit_X_New=Fit_2(Input(1:end-1,:),Target,X_New);
 
         if Fit_X_New>Fit_X
             counter=0;
@@ -189,7 +189,7 @@ while Run <=Max_Run
 
 %             X_New=zeros(1,Nvar);
 %             X_New(1,Best_Gene)=1;
-%             Fit_X_New=Fit(Input(1:end-1,:),Target,X_New);
+%             Fit_X_New=Fit_2(Input(1:end-1,:),Target,X_New);
 %             if Fit_X_New>=Fit_X
 %                 X=X_New;
 %                 Fit_X=Fit_X_New;
