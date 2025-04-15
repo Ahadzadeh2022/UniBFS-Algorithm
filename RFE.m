@@ -15,7 +15,7 @@ Max_FEs_LSA=Max_FEs;
 nVar=size(Input,2);
 X=ones(1,nVar);
 
-Fit_X=Fit(Input(1:end-1,:),Target,X);
+Fit_X=Fit_2(Input(1:end-1,:),Target,X);
 
 Max_FEs=EFs+Max_FEs_LSA;
 while EFs <=Max_FEs
@@ -32,7 +32,7 @@ while EFs <=Max_FEs
     X_New(K)=0;
 
 
-    Fit_X_New=Fit(Input(1:end-1,:),Target,X_New);
+    Fit_X_New=Fit_2(Input(1:end-1,:),Target,X_New);
 
 
 
