@@ -7,10 +7,10 @@ function cost = Fit_2(feat,label,X)
 if sum(X == 1) == 0
   cost = 0;
 else
-  % Error rate
-  error    = jwrapper_KNN(feat(:,X == 1),label);
 
-    cost     = error; 
+  % Accuracy
+  Accuracy    = jwrapper_KNN(feat(:,X == 1),label);
+  cost     = Accuracy; 
 
 end
 end
@@ -32,6 +32,7 @@ Md = cvpartition(label, 'KFold', 5);
         % Accuracy
         Acc(i)   = sum(pred == yvalid) / length(yvalid);
     end
-
-error    = mean(Acc)*100; 
+    
+% Accuracy
+Accuracy    = mean(Acc)*100; 
 end
