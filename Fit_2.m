@@ -17,7 +17,7 @@ end
 
 
 %---Call Functions-----------------------------------------------------
-function error = jwrapper_KNN(sFeat,label)
+function Accuracy = jwrapper_KNN(sFeat,label)
 
 Md = cvpartition(label, 'KFold', 5);
     for i = 1 : 5
